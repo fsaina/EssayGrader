@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Deep grader</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
+  </head>
+
+  <body>
+    <fountain-root>Loading...</fountain-root>
+  <script type="text/javascript" src="index.js"></script></body>
+    <script>
+    document.getElementById("clickMe").onclick = function () {
+        var text = document.getElementById("textArea").value;
+        var url = "http://127.0.0.1:5000/grade";
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                document.getElementById("score").innerText = "Score: "+json.grade +" / 100";
+            }
+        };
+        
+        document.getElementById("score").innerText = "";
+        var data = JSON.stringify({"text": text});
+        xhr.send(data);
+    };
+    </script>
+</html>
