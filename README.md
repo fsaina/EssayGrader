@@ -3,10 +3,8 @@
 ### Set-up
 In `models` directory download and unpack pretrained Word2Vec model with:
 ```console
-wget --save-cookies cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=0B7XkCwpI5KDYNlNUTTlSS21pQmM' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/Code: \1\n/p'
-```
-```console
-wget --load-cookies cookies.txt 'https://docs.google.com/uc?export=download&confirm=YOURCODEID&id=0B7XkCwpI5KDYNlNUTTlSS21pQmM' -O GoogleNews-vectors-negative300.bin.gz
+wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
+gunzip GoogleNews-vectors-negative300.bin.
 ```
 The word2vec model should be unziped in `models` dir as `GoogleNews-vectors-negative300.bin`
 
