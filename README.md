@@ -4,7 +4,7 @@
 In `models` directory download and unpack pretrained Word2Vec model with:
 ```console
 wget https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz
-gunzip GoogleNews-vectors-negative300.bin.
+gunzip GoogleNews-vectors-negative300.bin
 ```
 The word2vec model should be unziped in `models` dir as `GoogleNews-vectors-negative300.bin`
 
