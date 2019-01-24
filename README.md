@@ -16,6 +16,11 @@ Run the backend (might take some time to load w2v model and keras model), and ke
 python3 ./backend/backend.py
 ```
 
+Download dependency modules with npm from the `frontend` folder with:
+```
+npm install
+```
+
 Run the frontend with:
 ```
 npm run serve
